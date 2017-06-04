@@ -41,6 +41,9 @@ function onCommand(session, command) {
     case 'donate':
       donate(session)
       break
+    case 'marco':
+      polo(session)
+      break
     }
 }
 
@@ -90,13 +93,18 @@ function donate(session) {
   })
 }
 
+function polo(session) {
+  sendMessage(session, `Polo`)
+}
+
 // HELPERS
 
 function sendMessage(session, message) {
   let controls = [
     {type: 'button', label: 'Ping', value: 'ping'},
     {type: 'button', label: 'Count', value: 'count'},
-    {type: 'button', label: 'Donate', value: 'donate'}
+    {type: 'button', label: 'Donate', value: 'donate'},
+    {type: 'button', label: 'Marco', value: 'marco'}
   ]
   session.reply(SOFA.Message({
     body: message,
